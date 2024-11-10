@@ -23,11 +23,9 @@ const validationSchema = Yup.object().shape({
     .required("Password is required"),
 });
 
-
-
 function Register() {
   const navigate = useNavigate();
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
 
   const initialValues = {
     firstName: "",
@@ -39,14 +37,16 @@ function Register() {
 
   const handleSubmit = (values, { setSubmitting }) => {
     // Handle form submission here
-    dispatch(registerUser(values))
+    dispatch(registerUser(values));
     console.log(values);
     setSubmitting(false);
   };
 
   return (
-    <div>
-      <h1 className="text-white text-2xl ml-[15vh] mb-8">.. Registration ..</h1>
+    <div id="register" className=" w-[35vw] px-5">
+      <div className="flex justify-center items-center ">
+        <h1 className="text-white text-2xl mb-8"> Registration </h1>
+      </div>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -76,7 +76,6 @@ function Register() {
                 name="lastName"
                 placeholder="Last Name"
                 variant="outlined"
-                
                 className="bg-[#c3b0f0]"
                 fullWidth
               />
@@ -93,7 +92,6 @@ function Register() {
                 placeholder="Email"
                 type="email"
                 variant="outlined"
-                
                 className="bg-[#c3b0f0]"
                 fullWidth
               />
@@ -110,7 +108,6 @@ function Register() {
                 placeholder="Password"
                 type="password"
                 variant="outlined"
-                
                 className="bg-[#c3b0f0]"
                 fullWidth
               />
@@ -124,15 +121,15 @@ function Register() {
               <RadioGroup row name="gender" aria-label="gender">
                 <FormControlLabel
                   value="male"
-                  control={<Radio sx={{color:"white"}} />}
+                  control={<Radio sx={{ color: "white" }} />}
                   label="Male"
-                  sx={{background:"[#c3b0f0]",color:"white"}}
+                  sx={{ background: "[#c3b0f0]", color: "white" }}
                 />
                 <FormControlLabel
                   value="female"
-                  control={<Radio sx={{color:"white"}}  />}
+                  control={<Radio sx={{ color: "white" }} />}
                   label="Female"
-                  sx={{color:"white"}}
+                  sx={{ color: "white" }}
                 />
               </RadioGroup>
               <ErrorMessage
@@ -143,7 +140,11 @@ function Register() {
             </div>
           </div>
           <Button
-            sx={{ padding: ".8rem 0rem" ,background:"#522e82",color:"white"}}
+            sx={{
+              padding: ".8rem 0rem",
+              background: "#522e82",
+              color: "white",
+            }}
             fullWidth
             type="submit"
             variant="contained"
@@ -153,11 +154,8 @@ function Register() {
           </Button>
         </Form>
       </Formik>
-    
-     
     </div>
   );
 }
 
 export default Register;
-

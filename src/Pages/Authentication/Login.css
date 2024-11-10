@@ -10,9 +10,12 @@
 #par{
     position: relative;
 }
-#social{
-    position: absolute;
-   top: -60%;
-   left: 15%;
-}
 
+@media (max-width: 600px) {
+    #login{
+        font-size: 25px;
+    }
+    #register{
+        width: 80vw;
+    }
+  }

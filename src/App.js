@@ -8,7 +8,13 @@ import { useEffect } from 'react';
 import { getProfileAction, getUserProfile } from './Redux/Auth/auth.action';
 import { Store } from '@mui/icons-material';
 import Message from './Pages/Message/Message';
+import { API_BASE_URL } from './Confiq/api';
+import ChatMessage from './Components/Message/ChatMessage';
+import UserChatCard from './Components/Message/UserChatCard';
 function App() {
+
+  console.log(`${API_BASE_URL}/auth/signin`)
+
   const dispatch=useDispatch();
   const {auth}=useSelector(store=>store)
   console.log("auth",auth);
@@ -23,7 +29,6 @@ function App() {
     <div className="App">
       <Routes>
           <Route path='/*' element={auth.user?<Homepage/>:<Authentication/>} />
-          <Route path='/Message' element={<Message/>} />
           
       </Routes>
     </div>

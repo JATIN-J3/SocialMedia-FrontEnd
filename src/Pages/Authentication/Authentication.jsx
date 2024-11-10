@@ -1,73 +1,61 @@
-import { Card, Grid } from '@mui/material'
-import React, { useState } from 'react'
-import Login from './Login'
-import Register from './Register'
-import './Login.css'
-import a from './videdo/a.mp4'
+import { Card, Grid } from "@mui/material";
+import React, { useState } from "react";
+import Login from "./Login";
+import Register from "./Register";
+import "./Login.css";
+import a from "./videdo/a.mp4";
 const Authentication = () => {
-    const[login,setlogin]=useState(true);
-const handesubmit=()=>{
-    if(login==true){
-        setlogin(false);
+  const [login, setlogin] = useState(true);
+  const handesubmit = () => {
+    if (login == true) {
+      setlogin(false);
+    } else {
+      setlogin(true);
     }
-    else
-    {
-        setlogin(true);
-    }
-}
+  };
 
   return (
-    <div className='w-[100%] h-[100%]'>
-        <div className='h-[81%] w-[100%] fixed' >
-        <video src={a}  className=' relative'  autoPlay muted loop></video>
-        </div>
-        <Grid container >
-            <Grid item xs={4} className='h-screen'>
-         
-            </Grid>
+    <div className="w-full h-screen ">
+      <div className="h-[100%] w-[100%] fixed">
+        <video src={a} className=" relative" autoPlay muted loop></video>
+      </div>
+      <div className="w-[100%] h-[100%]  bg-[#af87e38b] flex flex-col justify-center items-center">
+        <div className=" flex flex-col justify-top  items-center min-h-[60%] min-w-[30%] border-solid border-2 border-white p-5  ">
+          <div id="par" className="card py-5 w-full">
+            <div>{login ? <Login /> : <Register />}</div>
 
-            <Grid item xs={5} sx={{zIndex:"100" }}>
-                
-            <div className='w-[100%] h-[100%]  bg-[#af87e329] flex flex-col justify-center items-center'>
-
-                <div className='px-20 flex flex-col justify-center items-center h-[90%] w-[90%] border-solid border-2 border-white bg-[#2b22372e]'>
-                    <div id='par' className='card pr-[3vh]'>
-                       <div id='social' className=' flex flex-col items-center space-y-1 '>
-                       <h1 className='log text-[7vh]  text-white'>Social Media</h1> 
-                       <p className='text-center text-m w-[70%] text-white'>
-                        Connection lives,
-                        
-                        social media clone 
-                       </p>
-                        </div>  
-
-
-                        <div className='w-[110%]'>
-                           {login ? <Login/>
-                            :<Register/>}
-                        </div>
-
-                    <Card  sx={{background:"#522e82",color:"white",width:"45vh", marginTop:"2vh",marginLeft:"4.5vh"}}>
-                       {login ? <div className='text-center h-[5vh] py-[5px] bt' id='bt'>
-                            if you dont have an account? <span className='text-black font-semibold spn' onClick={handesubmit}>Register</span>
-                        </div>
-                            :
-                        <div className='text-center h-[5vh] py-[5px] ' id='bt'>
-                            Already have an account? <span className='text-black spn' onClick={handesubmit}>Login</span>
-                        </div>}
-                    </Card>
-
-                   </div>
-
+            <Card
+              sx={{
+                background: "#522e82",
+                color: "white",
+                marginTop: "2vh",
+              }}
+            >
+              {login ? (
+                <div className="text-center w-full h-[5vh] py-[5px] bt" id="bt">
+                  if you dont have an account?
+                  <span
+                    id="span"
+                    className="text-black font-semibold hover:text-white"
+                    onClick={handesubmit}
+                  >
+                    Register
+                  </span>
                 </div>
-
+              ) : (
+                <div className="text-center h-[5vh] py-[5px] " id="bt">
+                  Already have an account?{" "}
+                  <span className="text-black spn" onClick={handesubmit}>
+                    Login
+                  </span>
+                </div>
+              )}
+            </Card>
           </div>
-          
-            </Grid>
-        </Grid>
-
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Authentication
+export default Authentication;
