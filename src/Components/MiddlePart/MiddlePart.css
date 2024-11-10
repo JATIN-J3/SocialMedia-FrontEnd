@@ -1,0 +1,6 @@
+#sty{
+    overflow: scroll;
+}
+#sty::-webkit-scrollbar{
+    display: none;
+}

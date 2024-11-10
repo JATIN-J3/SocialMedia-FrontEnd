@@ -1,0 +1,18 @@
+#bt:hover{
+    background: #000;
+}
+
+#bt:hover .spn{
+    color: white;
+    
+}
+
+#par{
+    position: relative;
+}
+#social{
+    position: absolute;
+   top: -60%;
+   left: 15%;
+}
+
