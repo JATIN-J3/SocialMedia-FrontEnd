@@ -16,7 +16,7 @@ const Authentication = () => {
 
   return (
     <div className="w-full h-screen ">
-      <div className="h-[100%] w-[100%] fixed">
+      <div id="video" className="h-[100%] w-[100%] fixed">
         <video src={a} className=" relative" autoPlay muted loop></video>
       </div>
       <div className="w-[100%] h-[100%]  bg-[#af87e38b] flex flex-col justify-center items-center">
